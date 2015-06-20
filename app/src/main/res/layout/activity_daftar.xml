@@ -3,59 +3,35 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.MainActivity"
-    android:longClickable="false"
-    android:background="#fffdff62">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/button"
-        android:layout_marginTop="25dp"
-        android:background="#088da5"
-        android:textColor="#ffff"
-        android:layout_below="@+id/textView4"
-        android:layout_toLeftOf="@+id/textView4"
-        android:layout_toStartOf="@+id/textView4" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Daftar"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
-        android:background="#ff4c4c"
-        android:onClick="onButtonDaftar" />
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.DaftarActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Aplikasi Minibus"
-        android:id="@+id/textView"
+        android:text="Daftar"
+        android:id="@+id/textView20"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Username"
-        android:id="@+id/textView2"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/textView"
+        android:id="@+id/username"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#1684ca" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editUsr"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/editUser"
+        android:layout_below="@+id/username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -66,10 +42,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Password"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/editUsr"
+        android:id="@+id/password"
+        android:layout_below="@+id/editUser"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:textColor="#1684ca" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -77,20 +55,33 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/editPass"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Status"
-        android:id="@+id/textView4"
+        android:text="Daftar"
+        android:id="@+id/daftar"
+        android:background="#1684ca"
+        android:textColor="#fff7fa"
         android:layout_below="@+id/editPass"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp" />
+        android:layout_toLeftOf="@+id/textView20"
+        android:layout_toStartOf="@+id/textView20"
+        android:layout_marginTop="85dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/balek"
+        android:layout_alignTop="@+id/daftar"
+        android:layout_toRightOf="@+id/textView20"
+        android:layout_toEndOf="@+id/textView20"
+        android:background="#ffff7135"
+        android:onClick="onTombolBalek" />
 
 </RelativeLayout>

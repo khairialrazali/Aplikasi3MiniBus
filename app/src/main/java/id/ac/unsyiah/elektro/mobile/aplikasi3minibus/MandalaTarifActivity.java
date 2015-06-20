@@ -1,7 +1,6 @@
 package id.ac.unsyiah.elektro.mobile.aplikasi3minibus;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,20 +8,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class Tarif extends Activity implements OnItemSelectedListener {
-
+public class MandalaTarifActivity extends Activity implements OnItemSelectedListener {
     private Spinner jurusan;
     private Spinner kotaTujuan;
     private Button btnPesanSekarang;
@@ -31,26 +25,23 @@ public class Tarif extends Activity implements OnItemSelectedListener {
     private ArrayAdapter arrayAdapter;
     String kotaAsl1, biaya;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tarif);
-
+        setContentView(R.layout.activity_mandala_tarif);
         jurusan = (Spinner) findViewById(R.id.spinner);
         harga = (TextView) findViewById(R.id.harga);
-        btnPesanSekarang = (Button)findViewById(R.id.btnPesanSekarang);
+        //btnPesanSekarang = (Button)findViewById(R.id.btnPesanSekarang);
 
         ArrayAdapter<String> tarifAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, kotaAsl);
         tarifAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         jurusan.setAdapter(tarifAdapter);
         jurusan.setOnItemSelectedListener(this);
-
     }
 
     public void onItemSelected (AdapterView<?> p,View v,int position,long id) {
         kotaAsl1=kotaAsl[position].toString();
+        //final Bundle b = new Bundle();
 
         btnPesanSekarang = (Button) findViewById(R.id.btnPesanSekarang);
         btnPesanSekarang.setOnClickListener(new View.OnClickListener(){
@@ -60,8 +51,8 @@ public class Tarif extends Activity implements OnItemSelectedListener {
                 if(btnPesanSekarang==v){
                     if(kotaAsl1=="Banda Aceh-Sigli"){
                         biaya = "40.000";
-                        Toast.makeText(getApplicationContext(), "Tiket telah dipesan!" + "Tujuan: " + kotaAsl1 + " " + "Harga: " + biaya, Toast.LENGTH_LONG).show();}
-                    else if(kotaAsl1=="Banda Aceh-Bireun"){
+                    Toast.makeText(getApplicationContext(), "Tiket telah dipesan!" + "Tujuan: " + kotaAsl1 + " "+"Harga: " + biaya, Toast.LENGTH_LONG).show();}
+                   else if(kotaAsl1=="Banda Aceh-Bireun"){
                         biaya = "50.000";
                         Toast.makeText(getApplicationContext(), "Tiket telah dipesan!" + "Tujuan: " + kotaAsl1 + " "+"Harga: " + biaya, Toast.LENGTH_LONG).show();
                     }else if(kotaAsl1=="Banda Aceh-Lhokseumawe"){
@@ -137,31 +128,32 @@ public class Tarif extends Activity implements OnItemSelectedListener {
         harga.setText("Pilih Kota!");
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_tarif, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_mandala_tarif, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
-    //ini buat menuju menu jadwal mobil minibus
-    public void onButtonKembalid(View view){
+    public void onTombolKembaliMnd(View view){
 
 
         Intent intent = new Intent(this, TarifAllActivity.class);
         startActivity(intent);
 
     }
-
 }

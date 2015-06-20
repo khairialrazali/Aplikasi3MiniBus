@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CustomOnItemSelectedListener"
-            android:label="@string/title_activity_custom_on_item_selected_listener" >
-        </activity>
-        <activity
             android:name=".Jadwal"
             android:label="@string/title_activity_jadwal" >
         </activity>
@@ -43,6 +39,46 @@
         <activity
             android:name=".Tarif"
             android:label="@string/title_activity_tarif" >
+        </activity>
+        <activity
+            android:name=".DaftarActivity"
+            android:label="@string/title_activity_daftar"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TarifAllActivity"
+            android:label="@string/title_activity_tarif_all"
+            android:parentActivityName=".SecondActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.SecondActivity" />
+        </activity>
+        <activity
+            android:name=".SamudraTarifActivity"
+            android:label="@string/title_activity_samudra_tarif"
+            android:parentActivityName=".TarifAllActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.TarifAllActivity" />
+        </activity>
+        <activity
+            android:name=".MandalaTarifActivity"
+            android:label="@string/title_activity_mandala_tarif"
+            android:parentActivityName=".TarifAllActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.TarifAllActivity" />
+        </activity>
+        <activity
+            android:name=".PesanTiketActivity"
+            android:label="@string/title_activity_pesan_tiket"
+            android:parentActivityName=".MandalaTarifActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.ac.unsyiah.elektro.mobile.aplikasi3minibus.MandalaTarifActivity" />
         </activity>
     </application>
 

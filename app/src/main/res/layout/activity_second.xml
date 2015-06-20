@@ -38,30 +38,20 @@
         android:onClick="onButtonTarifClicked" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lihat Tiket"
-        android:id="@+id/button5"
-        android:layout_marginTop="70dp"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/button4"
-        android:layout_toStartOf="@+id/button4" />
-
-    <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kembali"
         android:id="@+id/button6"
-        android:layout_alignTop="@+id/button5"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textColor="#ffffffff"
         android:background="#ffff7135"
         android:hint="Kembali"
-        android:onClick="onButtonKembali" />
+        android:onClick="onButtonKembali"
+        android:layout_below="@+id/button4"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:layout_alignRight="@+id/button4"
+        android:layout_alignEnd="@+id/button4"
+        android:layout_marginTop="40dp" />
 
 </RelativeLayout>

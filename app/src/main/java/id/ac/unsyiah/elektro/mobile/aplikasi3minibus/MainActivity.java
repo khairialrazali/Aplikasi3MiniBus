@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import id.ac.unsyiah.elektro.mobile.aplikasi3minibus.LoginDataBaseAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,13 +20,39 @@ public class MainActivity extends ActionBarActivity {
     private Button btnLogin;
     private TextView textView4;
     String username,pass;
+   // LoginDataBaseAdapter loginDataBaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initUI();
+        final LoginDataBaseAdapter loginDataBaseAdapter = new LoginDataBaseAdapter(this);
     }
+     /*   editUsr = (EditText) findViewById(R.id.editUsr);
+        editPass = (EditText) findViewById(R.id.editPass);
+        btnLogin = (Button) findViewById(R.id.button);
+
+        final String username = editUsr.getText().toString();
+        final String password = editPass.getText().toString();
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String storedPassword = loginDataBaseAdapter.getSinlgeEntry(username);
+                if (v == btnLogin) {
+                    if (password != null && password.equals(storedPassword)) {
+                        Toast.makeText(MainActivity.this, "Login ", Toast.LENGTH_LONG).show();
+                        Intent utm = new Intent(MainActivity.this, SecondActivity.class);
+                        startActivity(utm);
+                        finish();
+
+                    } else {
+                        Toast.makeText(MainActivity.this, "User Name/Password Salah!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+    }*/
 
 
     private void initUI(){
@@ -38,8 +66,6 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v){
                 if(v == btnLogin){
                     if(editUsr.getText().toString().equals(username) && editPass.getText().toString().equals(pass)){
-                        //txtStatus.setText("Login Berhasil");
-                        // doBack();
                         Intent intent1 = new Intent(MainActivity.this, SecondActivity.class);
                         startActivity(intent1);
 
@@ -55,6 +81,13 @@ public class MainActivity extends ActionBarActivity {
         username = "admin";
         pass = "admin";
     }
+
+    /*@Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LoginDataBaseAdapter loginDataBaseAdapter = new LoginDataBaseAdapter(this);
+        loginDataBaseAdapter.close();
+    } */
 
 
     @Override
@@ -81,8 +114,11 @@ public class MainActivity extends ActionBarActivity {
 
     public void doBack (View view){
         Intent intent = new Intent (this, SecondActivity.class);
-        //Intent intent;
-        //intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void onButtonDaftar (View view){
+        Intent intent = new Intent (this, DaftarActivity.class);
         startActivity(intent);
     }
 }

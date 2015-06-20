@@ -6,19 +6,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import static android.support.v4.app.ActivityCompat.startActivity;
 
 
-public class SecondActivity extends ActionBarActivity {
+public class TarifAllActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_tarif_all);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_tarif_all, menu);
+        return true;
     }
 
     @Override
@@ -35,32 +38,22 @@ public class SecondActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    //ini buat menuju menu jadwal mobil minibus
-    public void onButtonClicked(View view){
-
-
-        Intent intent = new Intent(this, Jadwal.class);
+    public void onTombolSamudra(View view){
+        Intent intent = new Intent(this, SamudraTarifActivity.class);
         startActivity(intent);
-
     }
 
-    //ini buat menuju menu jadwal mobil minibus
-    public void onButtonTarifClicked(View view){
-
-
-        Intent intent = new Intent(this, TarifAllActivity.class);
+    public void onTombolMentari(View view){
+        Intent intent = new Intent(this, Tarif.class);
         startActivity(intent);
-
     }
 
-    //kembali ke halaman sebelumnya
-    public void onButtonKembali(View view){
-
-
-        Intent intent = new Intent(this, MainActivity.class);
+    public void onTombolMandala(View view){
+        Intent intent = new Intent(this, MandalaTarifActivity.class);
         startActivity(intent);
-
     }
-
+    public void onTombolKmbl(View view){
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
 }
